@@ -22,7 +22,7 @@ module.exports = {
   // 云片颁发的 APi Key, 请访问云片开发者后台: https://www.yunpian.com/admin/main
   YUNPIAN_API_KEY: '<-- 此处填写云片颁发的 API Key -->',
   // N3D 密钥，用来加密所有的 Id 数字，不小于 5 位的字母数字组合
-  N3D_KEY: '<-- 此处设置加密 Id 的密钥 -->',
+  N3D_KEY: 'solo123',
   // 认证 Cookie 主域名 如果没有正式域名，请修改本地 hosts 文件配置域名
   AUTH_COOKIE_DOMAIN: '<-- 此处设置 Cookie 主域名， 必须和 CORS_HOSTS 配置项在相同的顶级域下 例如： api.sealtalk.im -->',
   // 跨域支持所需配置的域名信息，包括请求服务器的域名和端口号，如果是 80 端口可以省略端口号。如：http://web.sealtalk.im
@@ -30,13 +30,13 @@ module.exports = {
   // 本服务部署的 HTTP 端口号
   SERVER_PORT: 8585,
   // MySQL 数据库名称
-  DB_NAME: '<-- 此处设置数据库名称 -->',
+  DB_NAME: 'sealtalk',
   // MySQL 数据库用户名
-  DB_USER: '<-- 此处设置数据库用户名 -->',
+  DB_USER: 'root', //'sealtalk',
   // MySQL 数据库密码
-  DB_PASSWORD: '<-- 此处设置数据库密码 -->',
+  DB_PASSWORD: 'root',
   // MySQL 数据库服务器地址
-  DB_HOST: '<-- 此处设置数据库服务器的 IP 地址 -->',
+  DB_HOST: 'localhost',
   // MySQL 数据库服务端口号
   DB_PORT: 3306
 };

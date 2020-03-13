@@ -20,7 +20,20 @@ APIResult = require('../util/util').APIResult;
 
 HTTPError = require('../util/util').HTTPError;
 
-ref = require('../db'), sequelize = ref[0], User = ref[1], Blacklist = ref[2], Friendship = ref[3], Group = ref[4], GroupMember = ref[5], GroupSync = ref[6], DataVersion = ref[7], VerificationCode = ref[8], LoginLog = ref[9];
+// ref = require('../db'), sequelize = ref[0], User = ref[1], Blacklist = ref[2], Friendship = ref[3], Group = ref[4], GroupMember = ref[5], GroupSync = ref[6], DataVersion = ref[7], VerificationCode = ref[8], LoginLog = ref[9];
+ref = require('../db')
+let = {
+  sequelize,
+  User,
+  Blacklist,
+  Friendship,
+  Group,
+  GroupMember,
+  GroupSync, 
+  DataVersion, 
+  VerificationCode,
+  LoginLog
+} = ref
 
 var addUpdateTimeToList = require('../util/util').addUpdateTimeToList,
   addUpdateTime = require('../util/util').addUpdateTime;

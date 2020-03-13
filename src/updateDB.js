@@ -1,4 +1,6 @@
-var ref = require('./db'), sequelize = ref[0];
+var ref = require('./db')
+console.log("ref", ref)
+const sequelize  = ref.sequelize;
 
 var sqls = {
   //users 需求 2.1.0

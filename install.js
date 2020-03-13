@@ -20,7 +20,7 @@ var getMethod = function() {
 };
 
 var initGrunt = function() {
-    var shell = addSudo() + 'npm install -g grunt-cli';
+    var shell = addSudo() + 'cnpm install -g grunt-cli';
     execShell(shell, function(err, stdout) {
         showResult(err, stdout);
         next();
@@ -28,7 +28,7 @@ var initGrunt = function() {
 };
 
 var initSequelize = function () {
-    var shell = addSudo() + 'npm install sequelize@3.8.0';
+    var shell = addSudo() + 'cnpm install sequelize@3.8.0';
     execShell(shell, function (err, stdout) {
         showResult(err, stdout);
         next();
@@ -36,7 +36,7 @@ var initSequelize = function () {
 };
 
 var initDeps = function() {
-    var shell = addSudo() + 'npm install';
+    var shell = addSudo() + 'cnpm install';
     execShell(shell, function(err, stdout) {
         showResult(err, stdout);
         next();

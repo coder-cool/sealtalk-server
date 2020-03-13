@@ -1,4 +1,5 @@
-var sequelize = require('./src/db')[0];
+var ref = require('./src/db');
+const sequelize  = ref.sequelize;
 
 var argv = process.argv || [],
   command = argv[2] || '',

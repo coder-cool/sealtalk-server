@@ -30,7 +30,7 @@ sequelize = new Sequelize(Config.DB_NAME, Config.DB_USER, Config.DB_PASSWORD, {
   dialect: 'mysql',
   charset: 'utf8',
   dialectOptions: {
-    charset: 'utf8',
+    charset: 'utf8mb4',
     collate: 'utf8_general_ci'
   },
   timezone: '+08:00',
@@ -650,11 +650,11 @@ User = sequelize.define('users', {
   },
   passwordHash: {
     type: Sequelize.CHAR(40),
-    allowNull: false
+    allowNull: true
   },
   passwordSalt: {
     type: Sequelize.CHAR(4),
-    allowNull: false
+    allowNull: true
   },
   rongCloudToken: {
     type: Sequelize.STRING(256),
@@ -1403,4 +1403,22 @@ GroupExitedList = sequelize.define('group_exited_list', {
 //   // console.log('error', e);
 // })
 
-module.exports = [sequelize, User, Blacklist, Friendship, Group, GroupMember, GroupSync, DataVersion, VerificationCode, LoginLog, VerificationViolation, GroupFav, GroupBulletin, GroupReceiver, ScreenStatus, GroupExitedList];
+// module.exports = [sequelize, User, Blacklist, Friendship, Group, GroupMember, GroupSync, DataVersion, VerificationCode, LoginLog, VerificationViolation, GroupFav, GroupBulletin, GroupReceiver, ScreenStatus, GroupExitedList];
+module.exports = {
+  sequelize,
+  User, 
+  Blacklist, 
+  Friendship, 
+  Group, 
+  GroupMember, 
+  GroupSync, 
+  DataVersion, 
+  VerificationCode, 
+  LoginLog, 
+  VerificationViolation, 
+  GroupFav, 
+  GroupBulletin, 
+  GroupReceiver, 
+  ScreenStatus, 
+  GroupExitedList
+};

@@ -37,7 +37,42 @@ APIResult = require('../util/util').APIResult;
 
 var addUpdateTimeToList = require('../util/util').addUpdateTimeToList;
 
-ref = require('../db'), sequelize = ref[0], User = ref[1], Blacklist = ref[2], Friendship = ref[3], Group = ref[4], GroupMember = ref[5], GroupSync = ref[6], DataVersion = ref[7], VerificationCode = ref[8], LoginLog = ref[9], VerificationViolation = ref[10];
+// ref = require('../db'), sequelize = ref[0], User = ref[1], Blacklist = ref[2], Friendship = ref[3], Group = ref[4], GroupMember = ref[5], GroupSync = ref[6], DataVersion = ref[7], VerificationCode = ref[8], LoginLog = ref[9], VerificationViolation = ref[10];
+ref = require('../db')
+let = {
+  sequelize,
+  User,
+  Blacklist,
+  Friendship,
+  Group,
+  GroupMember,
+  GroupSync, 
+  DataVersion, 
+  VerificationCode,
+  LoginLog
+} = ref
+
+
+// var { 
+//   sequelize,
+//   User, 
+//   Blacklist, 
+//   Friendship, 
+//   Group, 
+//   GroupMember, 
+//   GroupSync, 
+//   DataVersion, 
+//   VerificationCode, 
+//   LoginLog, 
+//   VerificationViolation, 
+//   GroupFav, 
+//   GroupBulletin, 
+//   GroupReceiver, 
+//   ScreenStatus, 
+//   GroupExitedList
+// } = ref
+
+console.log("sssss", ref)
 
 var GroupFav = ref[11];
 
@@ -239,7 +274,7 @@ router.post('/send_code_yp', function (req, res, next) {
       return VerificationCode.upsert({
         region: region,
         phone: phone,
-        sessionId: ''
+        sessionId: 'dev'
       }).then(function () {
         return res.send(new APIResult(200));
       });
@@ -250,6 +285,7 @@ router.post('/send_code_yp', function (req, res, next) {
         })
         .then(function (result) {
           newVerification.sessionId = result.sessionId;
+          console.log("newVerification.sessionId>>>", newVerification.sessionId)
           return VerificationCode.upsert(newVerification).then(function () {
             res.send(new APIResult(200));
             return ViolationControl.update(ip);
